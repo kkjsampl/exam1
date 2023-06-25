@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas { width:500px; height:500px; background-color: black;}
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+  <script>
+    $(document).ready(function() {
+      var $canvas = $("#canvas");
+      var $red = $("#red")
+      var $redText = $("#red_text")
+      $redText.text("0");
+      $red.on("input", function(){
+        const red = $('#red').val();
+        $canvas.css("background-color", `rgb(${red},255,255)`);
+        $redText.text($red.val());
+      });
+    });
+  </script>
+</head>
+<body>
+    <div id="canvas">
+    </div>
+    빨강<input type="range" min="0" max="255" id="red" value="0"><span id="red_text"></span><br>
+</body>
+</body>
+</body>
+</html>

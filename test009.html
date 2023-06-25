@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #canvas { width:500px; height:500px; background-color: black;}
+    #red, #green, #blue {
+      width:400px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+  <script>
+    $(document).ready(function() {
+      const $canvas = $("#canvas");
+      const $red = $("#red")
+      const $redText = $("#red_text")
+      const $green = $("#green")
+      const $greenText = $("#green_text")
+      const $blue = $("#blue")
+      const $blueText = $("#blue_text")
+
+      $('#red, #green, #blue').on("input", function(){
+        const red = $('#red').val();
+        const green = $('#green').val();
+        const blue = $('#blue').val();
+        $canvas.css("background-color", `rgb(${red},${green},${blue})`);
+        console.log($(this).next());
+        $(this).next().text($(this).val());
+      });
+    });
+  </script>
+</head>
+<body>
+    <div id="canvas">
+    </div>
+    빨강<input type="range" min="0" max="255" id="red" value="0"><span id="red_text">0</span><br>
+    초록<input type="range" min="0" max="255" id="green" value="0"><span id="green_text">0</span><br>
+    파랑<input type="range" min="0" max="255" id="blue" value="0"><span id="blue_text">0</span>
+</body>
+</body>
+</body>
+</html>
