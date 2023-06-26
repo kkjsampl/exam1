@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트처리에서 this</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <script>
+        $(document).ready(function() {
+            $("p").on("click", function() {
+                $(this).css("display","none");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>우리나라 좋은나라 1</p>
+    <p>우리나라 좋은나라 2</p>
+    <p>우리나라 좋은나라 3</p>
+    <p>우리나라 좋은나라 4</p>
+</body>
+</html>

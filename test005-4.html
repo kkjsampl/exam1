@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+    <script>
+        $(document).ready(function() {
+            $("#choice").on("change", function() {
+                console.log("fire")
+                var choice = $(this).val();
+                console.log(choice)
+                if(choice=="직접 입력") {
+                    $("#email2").prop("disabled", false).val("").focus();
+                } else {
+                    $("#email2").prop("disabled", true).val(choice);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <input type="text" id="email1"> @ <input type="text" id="email2" disabled>
+    <select id="choice">
+        <option disabled selected>이메일을 선택하세요</option>
+        <option>직접 입력</option>
+        <option>naver.com</option>
+        <option>gmail.com</option>
+        <option>daum.net</option>
+    </select>
+</body>
+</html>
